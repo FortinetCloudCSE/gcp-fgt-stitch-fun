@@ -1,7 +1,8 @@
-# Fortinet Template Repo for TECWorkshops
 
-## Prereqs
-  - Docker
- 
-## How to use this repo:
-https://fortinetcloudcse.github.io/UserRepo/index.html
+# gcp-fgt-stitch-fun
+
+To view the workshop, please go here: [GitHub Pages Link](https://fortinetcloudcse.github.io/gcp-fgt-stitch-fun/)
+
+---
+
+For more information on creating these workshops, visit [FortinetCloudCSE User Repo](https://fortinetcloudcse.github.io/UserRepo/)
