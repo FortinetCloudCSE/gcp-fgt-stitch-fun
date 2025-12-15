@@ -14,19 +14,15 @@ THIS IS A TEST
 ### {{% badge style="info" color="red" icon="fa-fw fas fa-exclamation-triangle" title=" " %}}Change{{% /badge %}} FYI, YOU WILL NOW NEED TO CHECKIN WITH YOUR EMAIL ADDRESS TO VIEW THIS GUIDE
 This change helps with analytics and data gathering and is consistent with UserRepo guide (this repo) serving as the root of every new workshop (e.g. this guide is always on latest and greatest featureset which gets cloned into every new workshop)  
 
-This site will explain how to use the [Hugo Web Framework](https://gohugo.io/) & the ["reLearn" Theme](https://mcshelby.github.io/hugo-theme-relearn/index.html) to effectively organize & deliver Fortinet TEC Workshops & Product demos in a consistent, simple, and visually appealing format.
+This site will explain how to use the FortiGate automation stitch integration with GCP cloud functions in order to automatically remediate security events.  We will configure an Active/Passive High Availability pair of FortiGate VMs in a Security Services Hub configuration.   to a comprThe FortiGate will be configured with an [automation stitch](https://docs.fortinet.com/document/fortigate/7.6.4/administration-guide/139441/automation-stitches) which responds to a security event by invoking a cloud Fun 
 
-The beauty of this framework lies in its simplicity.  Within approx 30 mins, anybody can have a site up and running.  Content is created via Markdown files, and the workshop guide layout is simply a directory structure.
-
-Follow along on this simple tutorial to get up and running with a Hugo formatted site for your TEC Workshop/training/demo content today!
+Next we will configure add a Cloud Function which will respond to FortiGate Log Message by adding a Network Tag
 
 ### Learning Objectives
-- Setup UserRepo on your system & Build container with Hugo & CentralRepo
-- Learn to work in Hugo to create your content to display proper information flow for your TEC Workshop/demo/training
-- Publish your Hugo site to GitHub pages via a CI/CD model 
- 
-### Hugo and Fortinet TECWorkshops - Visually
-- The purpose of this workflow is to simplify creation of Fortinet TECWorkshop guides while providing an example CI/CD development environment with maximum re-usability 
-- Here's a visual representation of our process which will be fully explained in each chapter
 
-{{< FTNThugoFlow >}}
+- Learn how to deploy Active/Passive FortiGate architecture in GCP using Terraform.
+- Learn to create external threat feeds in FortiGate.
+- Learn how FortiGate interoperates with GCP Cloud Function to automate incident response.
+ 
+
+{{< figure src="base-env.png" alt="base-env" >}}
