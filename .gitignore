@@ -7,3 +7,122 @@ package-lock.json
 package.json
 /venv
 fortihugorunner
+
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfvars.json
+.terraform/
+.terraform.lock.hcl
+terraform.tfplan
+terraform.tfplan.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude all .tfvars files, which are likely to contain sensitive data
+# such as username/password, private keys, and other secrets. These
+# should not be part of version control as they are data points which
+# are potentially sensitive and subject to change depending on the
+# environment.
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Ignore override files as they are usually used to override resources locally and so
+# are not checked in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include override files you do wish to add to version control using negated pattern
+# !example_override.tf
+
+# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
+# example: *tfplan*
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Archive files (function source zips)
+*.zip
+function-source.zip
+function-source-*.zip
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Google Cloud credentials and config
+*.json
+!**/examples.json
+!**/example.json
+google-credentials.json
+service-account-key.json
+gcp-key.json
+credentials.json
+
+# SSH keys
+*.pem
+*.ppk
+id_rsa
+id_rsa.pub
+id_dsa
+id_dsa.pub
+id_ecdsa
+id_ecdsa.pub
+id_ed25519
+id_ed25519.pub
+
+# API keys and secrets
+.secrets
+secrets.txt
+api-keys.txt
+*.key
+
+# Backup files
+*.bak
+*.backup
+*~
