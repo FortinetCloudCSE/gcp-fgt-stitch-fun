@@ -1,13 +1,13 @@
 {
-  "repoName":"UserRepo",
-  "author":"Jeff Kopko",
-  "workshopTitle":"Hugo for Fortinet TECWorkshops",
+  "repoName":"gcp-fgt-stitch-fun",
+  "author":"Derrick Gooch",
+  "workshopTitle":"FortiGate Event Response Automation with GCP",
   "themeVariant":"Workshop",
-  "logoBannerText":"FortiHugo",
+  "logoBannerText":"FortiGate Automation",
   "logoBannerSubText":"",
   "errorLevel":"warning",
   "googleServicesID":"G-5RZBH288ST",
-  "marketingCode": "FortiHugo202",
+  "marketingCode": "FGTGCPSTITCHFUN",
   "shortcuts": [
   {
     "text": "Fortinet Cloud CSE GitHub Org",
@@ -16,22 +16,16 @@
     "weight":10
   },
   {
-    "text": "Fortinet Standard Workshop Guide",
-    "URL": "https://fortinetcloudcse.github.io/UserRepo",
+    "text": "FortiGate Automation Stitch Docs",
+    "URL": "https://docs.fortinet.com/document/fortigate/7.6.4/administration-guide/139441/automation-stitches",
     "icon": "fa-tools",
     "weight":20
   },
   {
-    "text": "Fortinet Standard Workshop Template Repo",
-    "URL": "https://github.com/FortinetCloudCSE/UserRepo",
+    "text": "FortiGate GCP Admin Guide",
+    "URL": "https://docs.fortinet.com/document/fortigate-public-cloud/7.6.0/gcp-administration-guide/736375/about-fortigate-vm-for-gcp",
     "icon": "fa-tools",
     "weight":30
-  },
-  {
-    "text": "Fortinet Hugo reLearn theme - Guide",
-    "URL": "https://mcshelby.github.io/hugo-theme-relearn/index.html",
-    "icon": "fa-tools",
-    "weight":40
   }
   ]
 }
