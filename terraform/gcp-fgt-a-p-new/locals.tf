@@ -324,40 +324,17 @@ locals {
         startup-script = <<-EOF
           #!/bin/bash
           echo "Starting user data script"
-          # Comment this line out if running after startup
+          # Comment the next line out if running after startup
           # exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
           echo "Wait for Internet access through the FGTs"
           while ! curl --connect-timeout 3 "https://www.google.com" &> /dev/null
               do continue
           done
           echo "Internet access is available, continuing with script"
-          apt-get update
+          apt-get update -y
+          echo "installing apache2"
           apt-get install -y apache2
-          systemctl start apache2
-          systemctl enable apache2
-          
-          # Create a simple index page
-          cat > /var/www/html/index.html << 'HTML'
-          <!DOCTYPE html>
-          <html>
-          <head>
-              <title>Debian Web Server</title>
-          </head>
-          <body>
-              <h1>Welcome to Debian Web Server</h1>
-              <p>This server is protected by FortiGate HA pair in GCP</p>
-              <p>Server hostname: $(hostname)</p>
-              <p>Server IP: $(hostname -I | awk '{print $1}')</p>
-          </body>
-          </html>
-HTML
-          
-          # Configure Apache to listen on port 80
-          systemctl restart apache2
-          
-          # Configure firewall to allow HTTP traffic
-          ufw allow 80/tcp
-          ufw --force enable
+          service apache2 restart
         EOF
       }
 
