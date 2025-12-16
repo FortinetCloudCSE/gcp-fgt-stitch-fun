@@ -323,6 +323,14 @@ locals {
         enable-oslogin = "TRUE"
         startup-script = <<-EOF
           #!/bin/bash
+          echo "Starting user data script"
+          # Comment this line out if running after startup
+          # exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+          echo "Wait for Internet access through the FGTs"
+          while ! curl --connect-timeout 3 "https://www.google.com" &> /dev/null
+              do continue
+          done
+          echo "Internet access is available, continuing with script"
           apt-get update
           apt-get install -y apache2
           systemctl start apache2
