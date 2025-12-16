@@ -119,6 +119,7 @@ config firewall policy
         set dstaddr "all"
         set schedule "always"
         set service "ALL"
+        set nat enable
         set comments "out to internet"
     next
 end

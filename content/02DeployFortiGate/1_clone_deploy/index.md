@@ -41,14 +41,19 @@ weight: 10
 
 ```sh
 
-debian_vm_internal_ip = "10.0.2.2"
-debian_vm_name = "a-debian-vm-cbh"
+Apply complete! Resources: 40 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+debian_vm_internal_ip = "10.0.2.3"
+debian_vm_name = "a-debian-vm-lzz"
 debian_vm_zone = "us-central1-a"
-fgt1_ip = "https://34.63.120.49:8443"
-fgt2_ip = "https://34.28.104.25:8443"
+fgt1_ip = "https://136.111.218.164:8443"
+fgt2_ip = "https://34.171.0.86:8443"
 fgt_password = "D3v0ps@1234!"
 fgt_username = ""
-nlb_ip = "130.211.212.222"
+nlb_ip = "34.72.74.141"
+student_00_1b8ea788332f@cloudshell:~/gcp-fgt-stitch-fun/terraform/gcp-fgt-a-p-new (qwiklabs-gcp-04-23d6e49308be)$ 
 
 ```
 

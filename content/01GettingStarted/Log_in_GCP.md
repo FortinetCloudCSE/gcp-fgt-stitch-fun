@@ -27,13 +27,4 @@ When your lab is fully provisioned, you will seee a list of student resources on
 
 ![Agree](agree.png)
 
-### View VM Instances
-
-Now we will look at the VMs resulting from the initial bootstrap of the environment.
-
-- On the left side of the console, click **Compute Engine > VM instances**
-- You should see a list of 5 instances.  The names all start with routelab and end with random generated letters.  There are Three FortiGates listed. The first two "fgt1" and fgt2 are in the central and east GCP regions, respectively.  These are the devices that will become Network Connectivity Center (NCC) Spokes.  The remote fortigate "rmt-fgt" will emulate our remote site.  All of these have External (public) IP addresses assigned.  Confirm that these addresses match with the ones provided in the student resources pane.
-
-![VMs](vms.png)
-
 ### This chapter is complete!  Congratulations.  You can move to the next Chapter
