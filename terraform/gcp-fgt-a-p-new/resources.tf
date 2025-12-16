@@ -144,7 +144,6 @@ resource "google_compute_forwarding_rule" "ifwd_rule" {
   ip_address            = each.value.ip_address
   all_ports             = true
   load_balancing_scheme = each.value.load_balancing_scheme
-  ip_protocol           = "L3_DEFAULT"
   backend_service       = each.value.backend_service
   allow_global_access   = true
 }
@@ -169,7 +168,7 @@ resource "google_compute_route" "default_route" {
   name         = "${var.prefix}-rt-default-via-fgt-${random_string.string.result}"
   dest_range   = "0.0.0.0/0"
   network      = google_compute_network.vpc_networks["trust_vpc"].id
-  next_hop_ilb = google_compute_address.compute_address["ilb-ip"].address
+  next_hop_ilb = google_compute_forwarding_rule.ifwd_rule["ilb_fwd_1"].self_link
   priority     = 100
 }
 
@@ -188,4 +187,21 @@ resource "google_compute_firewall" "compute_firewall" {
       protocol = allow.value.protocol
     }
   }
+}
+
+resource "google_compute_network" "vpc_networks" {
+  for_each = local.vpc_networks
+
+  name                    = each.value.name
+  auto_create_subnetworks = false
+}
+
+# Subnets
+resource "google_compute_subnetwork" "compute_subnetwork" {
+  for_each = local.subnets
+
+  name          = each.value.name
+  ip_cidr_range = each.value.cidr_range
+  region        = var.region
+  network       = google_compute_network.vpc_networks[each.value.vpc_key].id
 }
