@@ -6,17 +6,13 @@ archetype: "home"
 description: "Hugo for Fortinet TEC Workshops"
 ---
 
-
-THIS IS A TEST
-
-
-
-### {{% badge style="info" color="red" icon="fa-fw fas fa-exclamation-triangle" title=" " %}}Change{{% /badge %}} FYI, YOU WILL NOW NEED TO CHECKIN WITH YOUR EMAIL ADDRESS TO VIEW THIS GUIDE
+### FYI, YOU WILL NOW NEED TO CHECKIN WITH YOUR EMAIL ADDRESS TO VIEW THIS GUIDE
 This change helps with analytics and data gathering and is consistent with UserRepo guide (this repo) serving as the root of every new workshop (e.g. this guide is always on latest and greatest featureset which gets cloned into every new workshop)  
 
-This site will explain how to use the FortiGate automation stitch integration with GCP cloud functions in order to automatically remediate security events.  We will configure an Active/Passive High Availability pair of FortiGate VMs in a Security Services Hub configuration.   to a comprThe FortiGate will be configured with an [automation stitch](https://docs.fortinet.com/document/fortigate/7.6.4/administration-guide/139441/automation-stitches) which responds to a security event by invoking a cloud Fun 
+### Lab Summary
 
-Next we will configure add a Cloud Function which will respond to FortiGate Log Message by adding a Network Tag
+This lab will explain how to use the FortiGate automation stitch integration with GCP cloud functions in order to automatically remediate security events.  We will configure an Active/Passive High Availability pair of FortiGate VMs in a Security Services Hub configuration. The FortiGate will be configured with an [automation stitch](https://docs.fortinet.com/document/fortigate/7.6.4/administration-guide/139441/automation-stitches) which responds to a security event by invoking a Google Cloud Run Function, which will use data provided by FortiGate to find a compromised host VM and quarantine it.
+
 
 ### Learning Objectives
 

@@ -12,8 +12,8 @@ locals {
   fortigate_machine_type  = var.fortigate_machine_type
   fortigate_vm_image      = var.fortigate_vm_image
   fortigate_license_files = var.fortigate_license_files
-  flex_tokens            = var.flex_tokens
-  license_type = var.license_type
+  flex_tokens             = var.flex_tokens
+  license_type            = var.license_type
 
   #######################
   # Static IPs
@@ -156,6 +156,16 @@ locals {
         protocol = "all"
       }]
     }
+    "mgmt-vpc-ingress" = {
+      name               = "${random_string.string.result}ingress-mgmt-vpc-allow-all"
+      network            = google_compute_network.vpc_networks["mgmt_vpc"].id
+      direction          = "INGRESS"
+      source_ranges      = ["0.0.0.0/0"]
+      destination_ranges = null
+      allow = [{
+        protocol = "all"
+      }]
+    }
     "ha-vpc-ingress" = {
       name               = "${random_string.string.result}ingress-ha-vpc-allow-all"
       network            = google_compute_network.vpc_networks["ha_vpc"].id
@@ -219,12 +229,12 @@ locals {
           access_config = []
         },
         {
-          network    = google_compute_network.vpc_networks["ha_vpc"].id
-          subnetwork = google_compute_subnetwork.compute_subnetwork["ha-subnet-1"].name
-          network_ip = google_compute_address.compute_address["fgt1-ha-ip"].address
+          network       = google_compute_network.vpc_networks["ha_vpc"].id
+          subnetwork    = google_compute_subnetwork.compute_subnetwork["ha-subnet-1"].name
+          network_ip    = google_compute_address.compute_address["fgt1-ha-ip"].address
           access_config = []
-          },
-          {
+        },
+        {
           network    = google_compute_network.vpc_networks["mgmt_vpc"].id
           subnetwork = google_compute_subnetwork.compute_subnetwork["mgmt-subnet-1"].name
           network_ip = google_compute_address.compute_address["fgt1-mgmt-ip"].address
@@ -235,8 +245,8 @@ locals {
 
       metadata = {
         enable-oslogin = "TRUE"
-        user-data = data.template_file.template_file["fgt1-template"].rendered
-       }
+        user-data      = data.template_file.template_file["fgt1-template"].rendered
+      }
       service_account_scopes    = ["cloud-platform"]
       allow_stopping_for_update = true
     }
@@ -268,12 +278,12 @@ locals {
           access_config = []
         },
         {
-          network    = google_compute_network.vpc_networks["ha_vpc"].id
-          subnetwork = google_compute_subnetwork.compute_subnetwork["ha-subnet-1"].name
-          network_ip = google_compute_address.compute_address["fgt2-ha-ip"].address
+          network       = google_compute_network.vpc_networks["ha_vpc"].id
+          subnetwork    = google_compute_subnetwork.compute_subnetwork["ha-subnet-1"].name
+          network_ip    = google_compute_address.compute_address["fgt2-ha-ip"].address
           access_config = []
-          },
-          {
+        },
+        {
           network    = google_compute_network.vpc_networks["mgmt_vpc"].id
           subnetwork = google_compute_subnetwork.compute_subnetwork["mgmt-subnet-1"].name
           network_ip = google_compute_address.compute_address["fgt2-mgmt-ip"].address
@@ -284,7 +294,7 @@ locals {
 
       metadata = {
         enable-oslogin = "TRUE"
-        user-data = data.template_file.template_file["fgt2-template"].rendered
+        user-data      = data.template_file.template_file["fgt2-template"].rendered
       }
       service_account_scopes    = ["cloud-platform"]
       allow_stopping_for_update = true
@@ -342,7 +352,7 @@ HTML
           ufw --force enable
         EOF
       }
-      
+
       service_account_scopes    = ["cloud-platform"]
       allow_stopping_for_update = true
     }
@@ -359,9 +369,9 @@ HTML
       admin_port       = var.admin_port
       fgt_password     = var.fgt_password
       healthcheck_port = var.healthcheck_port
-      license_type    = var.license_type
-      license_token = local.flex_tokens[0] != "" ? local.flex_tokens[0] : null
-      license_file  = local.fortigate_license_files["fgt1_instance"].name != null ? local.fortigate_license_files["fgt1_instance"].name : null
+      license_type     = var.license_type
+      license_token    = local.flex_tokens[0] != "" ? local.flex_tokens[0] : null
+      license_file     = local.fortigate_license_files["fgt1_instance"].name != null ? local.fortigate_license_files["fgt1_instance"].name : null
       port1-ip         = google_compute_address.compute_address["fgt1-untrust-ip"].address
       port2-ip         = google_compute_address.compute_address["fgt1-trust-ip"].address
       port2-sub        = google_compute_subnetwork.compute_subnetwork["trust-subnet-1"].ip_cidr_range
@@ -384,9 +394,9 @@ HTML
       admin_port       = var.admin_port
       fgt_password     = var.fgt_password
       healthcheck_port = var.healthcheck_port
-      license_type    = var.license_type
-      license_token = local.flex_tokens[1] != "" ? local.flex_tokens[1] : null
-      license_file = local.fortigate_license_files["fgt2_instance"].name != null ? local.fortigate_license_files["fgt2_instance"].name : null
+      license_type     = var.license_type
+      license_token    = local.flex_tokens[1] != "" ? local.flex_tokens[1] : null
+      license_file     = local.fortigate_license_files["fgt2_instance"].name != null ? local.fortigate_license_files["fgt2_instance"].name : null
       port1-ip         = google_compute_address.compute_address["fgt2-untrust-ip"].address
       port2-ip         = google_compute_address.compute_address["fgt2-trust-ip"].address
       port2-sub        = google_compute_subnetwork.compute_subnetwork["trust-subnet-1"].ip_cidr_range
