@@ -11,6 +11,22 @@ output "nlb_ip" {
   value = google_compute_address.compute_address["elb-static-ip"].address
 }
 
+# Debian VM outputs
+output "debian_vm_internal_ip" {
+  value = google_compute_address.compute_address["debian-vm-ip"].address
+  description = "Internal IP address of the Debian VM"
+}
+
+output "debian_vm_name" {
+  value = google_compute_instance.compute_instance["debian_vm_instance"].name
+  description = "Name of the Debian VM instance"
+}
+
+output "debian_vm_zone" {
+  value = google_compute_instance.compute_instance["debian_vm_instance"].zone
+  description = "Zone where the Debian VM is deployed"
+}
+
 # FGT-Username
 output "fgt_username" {
   value = var.fgt_username

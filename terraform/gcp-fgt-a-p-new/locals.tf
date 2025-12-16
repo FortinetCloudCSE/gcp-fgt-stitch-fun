@@ -104,6 +104,13 @@ locals {
       address      = null
       address_type = "INTERNAL"
     }
+    "debian-vm-ip" = {
+      region       = local.region
+      name         = "${local.prefix}-debian-vm-ip-${random_string.string.result}"
+      subnetwork   = google_compute_subnetwork.compute_subnetwork["trust-subnet-1"].id
+      address      = null
+      address_type = "INTERNAL"
+    }
   }
 
 
@@ -279,6 +286,63 @@ locals {
         enable-oslogin = "TRUE"
         user-data = data.template_file.template_file["fgt2-template"].rendered
       }
+      service_account_scopes    = ["cloud-platform"]
+      allow_stopping_for_update = true
+    }
+
+    debian_vm_instance = {
+      name         = "${local.prefix}-debian-vm-${random_string.string.result}"
+      zone         = local.zone
+      machine_type = var.debian_vm_machine_type
+
+      can_ip_forward = "false"
+      tags           = ["debian-vm", "webserver"]
+
+      boot_disk_initialize_params_image = var.debian_vm_image
+
+      attached_disk = []
+
+      network_interface = [{
+        network       = google_compute_network.vpc_networks["trust_vpc"].id
+        subnetwork    = google_compute_subnetwork.compute_subnetwork["trust-subnet-1"].name
+        network_ip    = google_compute_address.compute_address["debian-vm-ip"].address
+        access_config = []
+      }]
+
+      metadata = {
+        enable-oslogin = "TRUE"
+        startup-script = <<-EOF
+          #!/bin/bash
+          apt-get update
+          apt-get install -y apache2
+          systemctl start apache2
+          systemctl enable apache2
+          
+          # Create a simple index page
+          cat > /var/www/html/index.html << 'HTML'
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Debian Web Server</title>
+          </head>
+          <body>
+              <h1>Welcome to Debian Web Server</h1>
+              <p>This server is protected by FortiGate HA pair in GCP</p>
+              <p>Server hostname: $(hostname)</p>
+              <p>Server IP: $(hostname -I | awk '{print $1}')</p>
+          </body>
+          </html>
+HTML
+          
+          # Configure Apache to listen on port 80
+          systemctl restart apache2
+          
+          # Configure firewall to allow HTTP traffic
+          ufw allow 80/tcp
+          ufw --force enable
+        EOF
+      }
+      
       service_account_scopes    = ["cloud-platform"]
       allow_stopping_for_update = true
     }

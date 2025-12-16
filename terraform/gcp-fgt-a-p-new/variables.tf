@@ -36,6 +36,19 @@ variable "healthcheck_port" {
   description = "Port used for LB health checks"
 }
 
+# Debian VM Configuration
+variable "debian_vm_machine_type" {
+  type        = string
+  default     = "e2-micro"
+  description = "Machine type for Debian VM"
+}
+
+variable "debian_vm_image" {
+  type        = string
+  default     = "debian-cloud/debian-12"
+  description = "Debian VM image"
+}
+
 # VPC Network Configuration
 variable "vpc_networks" {
   type = map(object({

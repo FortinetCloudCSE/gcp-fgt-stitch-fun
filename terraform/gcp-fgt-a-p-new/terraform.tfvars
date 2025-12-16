@@ -25,3 +25,7 @@ flex_tokens = ["token1", "token2"]
 admin_port = 8443
 fgt_password = "D3v0ps@1234!"
 
+# Debian VM Configuration
+debian_vm_machine_type = "e2-micro"
+debian_vm_image        = "debian-cloud/debian-12"
+
