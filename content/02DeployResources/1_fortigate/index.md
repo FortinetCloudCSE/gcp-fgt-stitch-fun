@@ -1,8 +1,12 @@
 ---
 title: "Task 1 - Clone and deploy the Github Repo"
-linkTitle: "Clone and Deploy"
+linkTitle: "Deploy FortiGate"
 weight: 10
 ---
+
+The code deployed during this task will result in a security services Hub with two FortiGates in A/P configuration. In addistion, there is a Debian 12 Linux VM which we will use for the testing.  The FortiGates are deployed as backend sets to two pass through load-balancers.  While high availability is not needed for this lab, this is a very common deployment and students will potentially benefit from seeing this used in practice.
+
+{{< figure src="no-fun.png" alt="no-fun" >}}
 
 ### Clone Github Repository and deploy resources
 
@@ -25,7 +29,7 @@ weight: 10
   
 * Navigate to the FortiGate deployment directory by typing ``` cd gcp-fgt-stitch-fun/terraform/gcp-fgt-a-p-new ```
 
-* At the prompt issue the ``` terraform init ``` command.  You should get a message stating **Terraform has been successfully initialized!**
+* At the prompt, issue the ``` terraform init ``` command.  You should get a message stating **Terraform has been successfully initialized!**
 
 * For this next step, you will need to input your GCP project ID.  Conveniently, this is displayed right next to the prompt.  You can either use ``` ctrl + c ``` or ``` cmd + c ``` to copy the Project ID.
 
@@ -80,3 +84,9 @@ student_00_1b8ea788332f@cloudshell:~/gcp-fgt-stitch-fun/terraform/gcp-fgt-a-p-ne
 * Click on SSH.  This will open a new tab or pop-up with the cli for your debian device.
 
   {{< figure src="ssh-deb.png" alt="ssh-deb" >}}
+
+* Ensure that the startup script loaded Apache2 by typing ``` curl localhost ```.  You should see some HTML returned.  If Apache2 doesn't seem to be working, wait a couple of minutes, as the device may still be running the startup script.
+
+* Now issue ``` ping 8.8.8.8 ``` and ensure that you get a response.
+
+### Move to the next Task
