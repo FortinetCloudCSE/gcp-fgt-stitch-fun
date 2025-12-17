@@ -10,7 +10,7 @@ The code deployed during this task will result in a security services Hub with t
 
 ### Clone Github Repository and deploy resources
 
-1. Open cloud shell
+1. **Open cloud shell**
 
 * On the top right hand side of the screen, click on the cursor icon.
 * Several pop-ups will be created. When prompted, click Authorize.
@@ -19,13 +19,13 @@ The code deployed during this task will result in a security services Hub with t
 
 * The result should be a Cloud Shell at the bottom of the screen.
 
-1. Clone the repo
+2. **Clone the repo**
 
 * At the prrompt, enter ``` git clone https://github.com/FortinetCloudCSE/gcp-fgt-stitch-fun.git ```
 
   {{< figure src="clone1.png" alt="clone1" >}}
 
-1. Deploy resources
+3. **Deploy resources**
   
 * Navigate to the FortiGate deployment directory by typing ``` cd gcp-fgt-stitch-fun/terraform/gcp-fgt-a-p-new ```
 
@@ -61,7 +61,7 @@ student_00_1b8ea788332f@cloudshell:~/gcp-fgt-stitch-fun/terraform/gcp-fgt-a-p-ne
 
 ```
 
-1. Verify FortiGate
+4. **Verify FortiGate**
 
 * Click on the links from the output for fgt1_ip and fgt2_ip.  These are the dedicated management IP Addresses assigned to port4 on the FortiGate.  If the FortiGates aren't available, for a couple of minutes, they may still be bootstrapping.
 
@@ -75,7 +75,7 @@ student_00_1b8ea788332f@cloudshell:~/gcp-fgt-stitch-fun/terraform/gcp-fgt-a-p-ne
 
   {{< figure src="con-up.png" alt="con-up" >}}
 
-1. Verify Debian VM
+5. **Verify Debian VM**
 
 * In the Google Cloud Console, click on the "hamburger menu at the top left of the screen.
 

@@ -1,6 +1,6 @@
 ---
-title: "Deploy FortiGates"
-linkTitle: "Ch 2: Deploy FortiGates"
+title: "Deploy Resources"
+linkTitle: "Ch 2: Deploy Resources"
 weight: 20
 ---
 
