@@ -4,7 +4,9 @@ linkTitle: "Deploy Function"
 weight: 20
 ---
 
-In this task we will create the Google Cloud Run Function, which handles device quarantine.  In order to track mitigations, and to prevent repeditive processing we are also creating a Firestore database.  Prior to starting that we need to create the default Firestore database and enable the Cloud Run Admin API.
+In this task we will create the Google Cloud Run Function, which handles device quarantine.  In order to track mitigations, and to prevent repeditive processing we are also creating a Firestore database.  Prior to starting that we need to create the default Firestore database and enable the Cloud Run Admin API.  At the end of this task, we will have completed the infrastructure build for our lab.
+
+ {{< figure src="fun-yes.png" alt="fun-yes" >}}
 
 ### Enable services
 
@@ -127,3 +129,4 @@ student-04-e6938c5f38ce@a-debian-vm-mkq:~$
 
  {{< figure src="cf-logs.png" alt="cf-logs" >}}
 
+### This chapter is complete! Congratulations. You can move to the next Chapter
