@@ -19,10 +19,10 @@ We will modify the trust VPC firewall rules in GCP to block traffic from devices
 
 * Configure the rule as below and click on **Create**
 
-  {{< figure src="add-feed.png" alt="add-feed" >}}
+  {{< figure src="gcp-fw.png" alt="gcp-f2" >}}
 
 * Ensure that the new rule is now in the list
 
-  {{< figure src="add-feed.png" alt="add-feed" >}}
+  {{< figure src="rules.png" alt="rules" >}}
 
 ### Move to the next task
