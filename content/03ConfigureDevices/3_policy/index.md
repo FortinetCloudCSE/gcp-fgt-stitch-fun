@@ -5,6 +5,12 @@ chapter: false
 weight: 50
 ---
 
+|                            |    |  
+|----------------------------| ----|
+| **Goal**                   | Enable threat feed in FortiGate Policy|
+| **Task**                   | Create new Policy in FortiGate which uses threat feed as destination IP|
+| **Verify task completion** | Policy is present|
+
 ### FortiGate Policy
 
 Now that we have our external threat feed, let's configure a policy which blocks packets with a destination IP matching that list.  

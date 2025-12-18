@@ -4,6 +4,12 @@ linkTitle: "Deploy FortiGate"
 weight: 10
 ---
 
+|                            |    |  
+|----------------------------| ----
+| **Goal**                   | Deploy HA pair of FortiGates into GCP
+| **Task**                   | Apply Terraform templates to build infrastructure
+| **Verify task completion** | FortiGate HA synchonized, GCP connector up and valid, Test VM can reach internet
+
 The code deployed during this task will result in a security services Hub with two FortiGates in A/P configuration. In addistion, there is a Debian 12 Linux VM which we will use for the testing.  The FortiGates are deployed as backend sets to two pass through load-balancers.  While high availability is not needed for this lab, this is a very common deployment and students will potentially benefit from seeing this used in practice.
 
 {{< figure src="no-fun.png" alt="no-fun" >}}
