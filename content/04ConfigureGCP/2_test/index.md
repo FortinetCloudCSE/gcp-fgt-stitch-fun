@@ -68,4 +68,6 @@ weight: 5
 
   {{< figure src="db-check.png" alt="db-check" >}}
 
+{{< quizframe page="/gamebytag?tag=config" height="800" width="100%" >}}
+
 ### Congratulations!  You have completed this Class!
