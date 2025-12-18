@@ -5,6 +5,12 @@ chapter: false
 weight: 52
 ---
 
+|                            |    |  
+|----------------------------| ----|
+| **Goal**                   | Enable automation stitch
+| **Task**                   | Log into FortiGate GUI and configure stitch components|
+| **Verify task completion** | Automation stitch is present|
+
 ### Automation Stitch
 
 Now that we have our policy configured and set to log violations, we are going to configure an automation stitch in FortiGate.  The automation stitch consists of three components:

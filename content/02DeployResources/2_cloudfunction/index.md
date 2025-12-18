@@ -4,6 +4,12 @@ linkTitle: "Deploy Function"
 weight: 20
 ---
 
+|                            |    |  
+|----------------------------| ----
+| **Goal**                   | Enable all APIs and services,  Deploy Cloud Function
+| **Task**                   | Apply Terraform templates to build infrastructure
+| **Verify task completion** | Cloud Function responds to CURL from Debian VM
+
 In this task we will create the Google Cloud Run Function, which handles device quarantine.  In order to track mitigations, and to prevent repeditive processing we are also creating a Firestore database.  Prior to starting that we need to create the default Firestore database and enable the Cloud Run Admin API.  At the end of this task, we will have completed the infrastructure build for our lab.
 
  {{< figure src="fun-yes.png" alt="fun-yes" >}}

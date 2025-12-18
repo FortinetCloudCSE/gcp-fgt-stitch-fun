@@ -5,6 +5,12 @@ chapter: false
 weight: 5
 ---
 
+|                            |    |  
+|----------------------------| ----|
+| **Goal**                   | Enable threat feed on FortiGate|
+| **Task**                   | Log into FortiGate GUI and configure threat feed|
+| **Verify task completion** | Blocked IP is present in threat feed|
+
 ### Threat feed
 
 1. **Configure FortiGate**

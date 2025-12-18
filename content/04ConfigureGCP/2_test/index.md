@@ -5,6 +5,13 @@ chapter: false
 weight: 5
 ---
 
+|                            |    |  
+|----------------------------| ----|
+| **Goal**                   | Confirm service is working|
+| **Task**                   | Verify blocked traffic, verify quarantine|
+| **Verify task completion** | Traffic is blocked and device is quarantined|
+
+
 ### Test time
 
 1. **Debian**

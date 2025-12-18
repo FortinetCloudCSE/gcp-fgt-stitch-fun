@@ -5,6 +5,12 @@ chapter: false
 weight: 2
 ---
 
+|                            |    |  
+|----------------------------| ----|
+| **Goal**                   | Add firewall rule to GCP|
+| **Task**                   | Configure VPC firewall rule in Google Cloud console|
+| **Verify task completion** | Rule is present and confgired properly|
+
 ### Create firewall rule
 
 We will modify the trust VPC firewall rules in GCP to block traffic from devices with a Network Tag named "compromised"
