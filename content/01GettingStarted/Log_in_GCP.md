@@ -27,4 +27,6 @@ When your lab is fully provisioned, you will seee a list of student resources on
 
 ![Agree](agree.png)
 
+{{< quizframe page="/gamebytag?tag=setup" height="800" width="100%" >}}
+
 ### This chapter is complete!  Congratulations.  You can move to the next Chapter

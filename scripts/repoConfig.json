@@ -7,6 +7,8 @@
   "logoBannerSubText":"",
   "errorLevel":"warning",
   "googleServicesID":"G-5RZBH288ST",
+  "quizURL":"https://gcp-fgt-stitch-o32xpkqaca-uc.a.run.app",
+  "analyticsBaseUrl":"https://tecanalytics.forticloudcse.com",
   "marketingCode": "FGTGCPSTITCHFUN",
   "shortcuts": [
   {

@@ -135,4 +135,6 @@ student-04-e6938c5f38ce@a-debian-vm-mkq:~$
 
  {{< figure src="cf-logs.png" alt="cf-logs" >}}
 
+{{< quizframe page="/gamebytag?tag=deploy" height="800" width="100%" >}}
+
 ### This chapter is complete! Congratulations. You can move to the next Chapter
