@@ -51,4 +51,6 @@ For more documentation about about FortiGate Automation stitches, check out this
 
   {{< figure src="new-stitch.png" alt="new-stitch" >}}
 
+{{< quizframe page="/gamebytag?tag=config" height="800" width="100%" >}}
+
 ### This chapter is complete! Congratulations. You can move to the next Chapter
