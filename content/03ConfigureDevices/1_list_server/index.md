@@ -13,7 +13,7 @@ weight: 2
 
 ### Create list server
 
-FortiGuard provides and extensive list of know C&C servers and know malicious sites.  These can be applied as part of Intrusion Prevention and DNS policies.  For the purposes of this lab, we are not going to use those, as they change pretty much constantly and sometimes our Partners (like GCP) take exception to us calling real C&C servers for training labs.  Instead, we are going to create a block list on our Debian VM, and then call it as an external threat feed on FortiGate.  So that we can verify the functionality, we are going to use a well known ip (8.8.8.8) that answers icmp traffic, and is almost always reachable.
+FortiGuard provides and extensive list of known C&C servers and known malicious sites.  These can be applied as part of Intrusion Prevention and DNS policies.  For the purposes of this lab, we are not going to use those, as they change pretty much constantly and sometimes our Partners (like GCP) take exception to us calling real C&C servers for training labs.  Instead, we are going to create a block list on our Debian VM, and then call it as an external threat feed on FortiGate.  So that we can verify the functionality, we are going to use a well known ip (8.8.8.8) that answers icmp traffic, and is almost always reachable.
 
 1. **Apache2**
 
