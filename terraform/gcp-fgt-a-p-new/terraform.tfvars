@@ -1,7 +1,7 @@
 
 region = "us-central1"
 zone   = "us-central1-a"
-zone2  = "us-central1-b"
+zone2  = "us-central1-c"
 
 # VPC Networks will use default values from variables.tf
 # Subnets will use default values from variables.tf
