@@ -38,6 +38,7 @@ resource "google_compute_instance" "compute_instance" {
   boot_disk {
     initialize_params {
       image = each.value.boot_disk_initialize_params_image
+      type  = "hyperdisk-balanced"
     }
   }
 
