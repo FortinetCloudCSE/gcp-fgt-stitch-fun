@@ -186,13 +186,13 @@ locals {
     "fgt1-logdisk" = {
       name = "fgt1-logdisk-${random_string.string.result}"
       size = 30
-      type = "pd-standard"
+      type = "hyperdisk-balanced"
       zone = local.zone
     }
     "fgt2-logdisk" = {
       name = "fgt2-logdisk-${random_string.string.result}"
       size = 30
-      type = "pd-standard"
+      type = "hyperdisk-balanced"
       zone = local.zone2
     }
   }
